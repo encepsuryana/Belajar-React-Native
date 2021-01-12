@@ -1,114 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, {Component} from 'react';
+import {View,Text} from 'react-native';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+export default class FlexDirection extends Component {
+  render() {
+    return (
+      // // Flex Start
+      // <View style={{flexDirection:'row', justifyContent: 'Flex-start'}}>
+      //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+      //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>  
+      // </View>
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+      // Center
+      // <View style={{flexDirection:'row', justifyContent: 'center'}}>
+      //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+      //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>  
+      // </View>
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+      // Flex-end
+      // <View style={{flexDirection:'row', justifyContent: 'flex-end'}}>
+      //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+      //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>  
+      // </View>
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+      // Space-between
+      // <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
+      //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+      //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View> 
+      //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>  
+      // </View>
 
-export default App;
+      // Space-around
+      <View style={{flexDirection:'row', justifyContent: 'space-around'}}>
+        <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+        <View style={{height:50, width:50, backgroundColor: 'blue'}}></View> 
+        <View style={{height:50, width:50, backgroundColor: 'green'}}></View> 
+        <View style={{height:50, width:50, backgroundColor: 'black'}}></View>  
+      </View>
+    )
+  }
+}
