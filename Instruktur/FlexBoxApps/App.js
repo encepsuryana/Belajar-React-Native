@@ -1,27 +1,131 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import {View, Text, StyleSheet, ScrollView, Image, ImageBackground} from 'react-native';
 
-export default class FlexDirection extends Component {
+
+export default class DataCustomers extends Component {
   render() {
-    return(
-      // Flex Start
-      // <View style={{flexDirection: 'row', justifyContent:'flex-start'}}>
-      //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
-      //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View>
-      //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View>
-      //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>
-      // </View>
+    return (
+      <View style={tampilan.wrapper}>
+        <View style={tampilan.header}>
+          <Text style={tampilan.judulTulisan}>Hello React Native!</Text>
+        </View>
+        
+        <ScrollView>
+          <View style={[tampilan.container]}>
+            <Text style={tampilan.judulSection}>List Cust</Text>
+            <ScrollView horizontal={true}>
+              <ImageBackground source={require('./src/images/12.jpg')} style={tampilan.boxBanner}>
+                <Text style={tampilan.textBanner}>Website</Text>
+              </ImageBackground>
 
-      // Center
-      <View style={{flexDirection: 'row', justifyContent:'center'}}>
-        <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
-        <View style={{height:50, width:50, backgroundColor: 'blue'}}></View>
-        <View style={{height:50, width:50, backgroundColor: 'green'}}></View>
-        <View style={{height:50, width:50, backgroundColor: 'black'}}></View>
+            </ScrollView>
+          </View>
+        </ScrollView>
+
       </View>
-    )
+    );
   }
 }
+
+const tampilan = StyleSheet.create({
+  wrapper: {
+    flex: 1
+  },
+  container: {
+    backgroundColor: 'white',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    width: '90%',
+    alignSelf: 'center',
+    marginVertical: 15
+  },
+  header: {
+    backgroundColor: '#eee',
+    height: 50,
+    color: 'blue',
+    justifyContent: 'center',
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  judulTulisan: {
+    fontSize: 24,
+    fontWeight: 'bold'
+  },
+  judulSection: {
+    fontSize: 18,
+    borderBottomWidth: 1,
+    width: 80,
+    marginBottom: 10
+  },
+  boxBanner: {
+    width: 100,
+    height: 70,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginHorizontal: 10
+  },
+  textBanner: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingHorizontal: 20,
+    paddingVertical: 5,
+    color: 'white',
+    fontSize: 14
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, {Component} from 'react';
+// import {View, Text} from 'react-native';
+
+// export default class FlexDirection extends Component {
+//   render() {
+//     return(
+//       // Flex Start
+//       // <View style={{flexDirection: 'row', justifyContent:'flex-start'}}>
+//       //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>
+//       // </View>
+
+//       // Center
+//       // <View style={{flexDirection: 'row', justifyContent:'center'}}>
+//       //   <View style={{height:50, width:50, backgroundColor: 'red'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'blue'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'green'}}></View>
+//       //   <View style={{height:50, width:50, backgroundColor: 'black'}}></View>
+//       // </View>
+//     )
+//   }
+// }
 
 // import React, { Component } from 'react';
 // import { View, Text, Image, ActivityIndicator, FlatList } from 'react-native';

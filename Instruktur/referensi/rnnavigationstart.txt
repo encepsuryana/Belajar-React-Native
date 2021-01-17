@@ -1,0 +1,1 @@
+npm i -s @react-native-community/masked-view @react-native-community/viewpager react-native-gesture-handler react-native-reanimated react-native-safe-area-context react-native-screens react-navigation react-navigation-drawer react-navigation-stack
