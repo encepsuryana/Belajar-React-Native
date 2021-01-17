@@ -71,11 +71,11 @@ export default class FlexDirection extends Component {
 //         ) 
 //     }
 
-//     // _separatorComponent=()=>{
-//     //     return(
-//     //         <View style={{backgroundColor:'grey',height:0.5}}></View>
-//     //     )
-//     // }
+    // _separatorComponent=()=>{
+    //     return(
+    //         <View style={{backgroundColor:'grey',height:0.5}}></View>
+    //     )
+    // }
 
 //     render() {
 //         if (this.state.isLoading) {
