@@ -1,79 +1,99 @@
 import React, { Component } from 'react';
-import {View, Text, StyleSheet, ScrollView, Image, ImageBackground} from 'react-native';
+import {View, Text, ScrollView, Image, ImageBackground, TouchableHighlight} from 'react-native';
+import ViewPager from '@react-native-community/viewpager';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
 
-export default class DataCustomers extends Component {
-  render() {
+import {tampilan} from './src/style/Style'
+import shopScreen from './src/screen/Shop'
+
+const stactOption = (props) => {
+  return {
+    headerStyle: {
+      backgroundColor: '#eee'
+    }, 
+    headerTitle: () =>
+        <View style={tampilan.header}>
+            <Text style={tampilan.judulTulisan}>Hello React Native!</Text>
+      </View>
+  }
+}
+
+
+function App(props) {
     return (
       <View style={tampilan.wrapper}>
-        <View style={tampilan.header}>
-          <Text style={tampilan.judulTulisan}>Hello React Native!</Text>
+                
+        <View>
+          <ViewPager showPageIndicator={true} style={tampilan.vBanner} initialPage={0}>
+              <View key="1">
+                <Image style={tampilan.banner} source={require('./src/images/banner-babastudio.webp')}></Image>
+              </View>
+              <View key="2">
+                <Image style={tampilan.banner} source={require('./src/images/banner-babastudio.webp')}></Image>
+              </View>
+              <View key="3">
+                <Image style={tampilan.banner} source={require('./src/images/banner-babastudio.webp')}></Image>
+              </View>
+          </ViewPager>
         </View>
         
         <ScrollView>
-          <View style={[tampilan.container]}>
+          <View style={[tampilan.container, tampilan.bayangan]}>
             <Text style={tampilan.judulSection}>List Cust</Text>
             <ScrollView horizontal={true}>
-              <ImageBackground source={require('./src/images/12.jpg')} style={tampilan.boxBanner}>
+              <ImageBackground source={require('./src/images/paket-internet-marketing.webp')} style={tampilan.boxBanner}>
+                <Text style={tampilan.textBanner}>Website</Text>
+              </ImageBackground>
+
+              <ImageBackground source={require('./src/images/paket-internet-marketing.webp')} style={tampilan.boxBanner}>
+                <Text style={tampilan.textBanner}>Website</Text>
+              </ImageBackground>
+
+              <ImageBackground source={require('./src/images/paket-internet-marketing.webp')} style={tampilan.boxBanner}>
+                <Text style={tampilan.textBanner}>Website</Text>
+              </ImageBackground>
+
+              <ImageBackground source={require('./src/images/paket-internet-marketing.webp')} style={tampilan.boxBanner}>
+                <Text style={tampilan.textBanner}>Website</Text>
+              </ImageBackground>
+
+              <ImageBackground source={require('./src/images/paket-internet-marketing.webp')} style={tampilan.boxBanner}>
                 <Text style={tampilan.textBanner}>Website</Text>
               </ImageBackground>
 
             </ScrollView>
           </View>
+
+          <View style={[tampilan.container, tampilan.bayangan]}>
+            <TouchableHighlight style={{backgroundColor: '#eee', padding: 10, justifyContent: 'center', alignItems:'center'}}
+            onPress={() => props.navigation.navigate("Shop")}>
+              <Text>Shop Now</Text>
+            </TouchableHighlight>
+          </View>
+          
         </ScrollView>
+
+        <View style={tampilan.footer}>
+          <Text style={tampilan.footerTulisan}>@2021</Text>
+        </View>
 
       </View>
     );
   }
-}
 
-const tampilan = StyleSheet.create({
-  wrapper: {
-    flex: 1
+const appNavigator = createStackNavigator({
+  Home: {
+    screen: App,
+    navigationOptions: stactOption
   },
-  container: {
-    backgroundColor: 'white',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    width: '90%',
-    alignSelf: 'center',
-    marginVertical: 15
-  },
-  header: {
-    backgroundColor: '#eee',
-    height: 50,
-    color: 'blue',
-    justifyContent: 'center',
-    paddingLeft: 20,
-    paddingRight: 20
-  },
-  judulTulisan: {
-    fontSize: 24,
-    fontWeight: 'bold'
-  },
-  judulSection: {
-    fontSize: 18,
-    borderBottomWidth: 1,
-    width: 80,
-    marginBottom: 10
-  },
-  boxBanner: {
-    width: 100,
-    height: 70,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    marginHorizontal: 10
-  },
-  textBanner: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    paddingHorizontal: 20,
-    paddingVertical: 5,
-    color: 'white',
-    fontSize: 14
+  Shop: {
+    screen: shopScreen
   }
 });
 
-
+export default createAppContainer(appNavigator);
 
 
 
