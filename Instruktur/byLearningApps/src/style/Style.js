@@ -1,5 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
-var {width} = Dimensions.get('window');
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -14,19 +13,7 @@ export const styles = StyleSheet.create({
     marginVertical: 15,
     borderRadius: 15,
   },
-  footer: {
-    backgroundColor: '#270995',
-    height: 50,
-    color: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  footerTulisan: {
-    color: 'white',
-  },
-  bayangan: {
+  shadow: {
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -40,17 +27,17 @@ export const styles = StyleSheet.create({
   header: {
     backgroundColor: '#eee',
     height: 50,
-    color: 'blue',
     justifyContent: 'center',
+    paddingHorizontal: 20,
   },
-  judulTulisan: {
+  textHeader: {
     fontSize: 24,
     fontWeight: 'bold',
   },
-  judulSection: {
+  textSection: {
     fontSize: 12,
-    borderBottomWidth: 1,
-    width: 100,
+    borderBottomWidth: 0.5,
+    width: 110,
     marginBottom: 10,
     fontWeight: 'bold',
   },
@@ -64,11 +51,12 @@ export const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   textBanner: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,.5)',
     paddingHorizontal: 20,
-    paddingVertical: 5,
-    color: 'white',
+    paddingVertical: 5, 
+    color: '#fff',
     fontSize: 12,
+    marginTop: 50
   },
   descBanner: {
     fontSize: 10,
@@ -83,11 +71,12 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 200,
   },
-  bigBanner: {
-    width: width,
-    height: 300,
+  btnTouch: {
+    padding: 10,
     justifyContent: 'center',
-    alignSelf: 'center',
-    resizeMode: 'cover',
+    alignItems: 'center',
+  },
+  textShop: {
+    fontWeight: 'bold',
   },
 });

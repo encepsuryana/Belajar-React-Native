@@ -38,31 +38,31 @@
 // function App(props) {
 //   return (
 //     <View style={styles.wrapper}>
-//       <View>
-//         <ViewPager
-//           showPageIndicator={true}
-//           style={styles.vBanner}
-//           initialPage={0}>
-//           <View key="1">
-//             <Image
-//               style={styles.banner}
-//               source={require('./src/images/banner-babastudio.webp')}
-//             />
-//           </View>
-//           <View key="2">
-//             <Image
-//               style={styles.banner}
-//               source={require('./src/images/banner-babastudio.webp')}
-//             />
-//           </View>
-//           <View key="3">
-//             <Image
-//               style={styles.banner}
-//               source={require('./src/images/banner-babastudio.webp')}
-//             />
-//           </View>
-//         </ViewPager>
-//       </View>
+// <View>
+//   <ViewPager
+//     showPageIndicator={true}
+//     style={styles.vBanner}
+//     initialPage={0}>
+//     <View key="1">
+//       <Image
+//         style={styles.banner}
+//         source={require('./src/images/banner-babastudio.webp')}
+//       />
+//     </View>
+//     <View key="2">
+//       <Image
+//         style={styles.banner}
+//         source={require('./src/images/banner-babastudio.webp')}
+//       />
+//     </View>
+//     <View key="3">
+//       <Image
+//         style={styles.banner}
+//         source={require('./src/images/banner-babastudio.webp')}
+//       />
+//     </View>
+//   </ViewPager>
+// </View>
 
 //       <ScrollView>
 //         <View style={[styles.container, styles.bayangan]}>
@@ -251,32 +251,132 @@
 //     }
 // }
 
-	
-import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import {
+  View,
+  Text,
+  Image,
+  StatusBar,
+  ScrollView,
+  ImageBackground,
+  TouchableHighlight,
+} from 'react-native';
+import ViewPager from '@react-native-community/viewpager';
+import ScreenShop from './src/screen/Shop';
 
-export default class Example extends Component {
-  render() {
-    return (
-      <View style={{flex: 1, flexDirection:'row', flexWrap: 'wrap'}}>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
-        <View style={styles.boxStyle}></View>
+import {styles} from './src/style/Style';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+
+const stackOption = (props) => {
+  return {
+    headerStyle: {
+      backgroundColor: '#eee',
+    },
+    headerTitle: () => (
+      <View>
+        <StatusBar animated backgroundColor="#eee" barStyle="dark-content" />
+        {/* <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true}/> */}
+
+        <View style={styles.header}>
+          <Text style={styles.textHeader}>byLearning</Text>
+        </View>
       </View>
-    )
-  }
+    ),
+  };
+};
+
+function App(props) {
+  return (
+    <View style={styles.wrapper}>
+      <View>
+        <ViewPager
+          showPageIndicator={true}
+          style={styles.vBanner}
+          initialPage={0}>
+          <View key="1">
+            <Image
+              style={styles.banner}
+              source={require('./src/images/banner-babastudio.webp')}
+            />
+          </View>
+          <View key="2">
+            <Image
+              style={styles.banner}
+              source={require('./src/images/banner-babastudio.webp')}
+            />
+          </View>
+          <View key="3">
+            <Image
+              style={styles.banner}
+              source={require('./src/images/banner-babastudio.webp')}
+            />
+          </View>
+        </ViewPager>
+      </View>
+
+      <ScrollView>
+        <View style={[styles.container, styles.shadow]}>
+          <Text style={styles.textSection}> Popular eLearning </Text>
+
+          <ScrollView horizontal={true}>
+            <View>
+              <ImageBackground
+                source={require('./src/images/paket-internet-marketing.webp')}
+                style={styles.boxBanner}>
+                <Text style={styles.textBanner}>Website</Text>
+              </ImageBackground>
+              <Text style={styles.descBanner}>Build Website React..</Text>
+            </View>
+
+            <View>
+              <ImageBackground
+                source={require('./src/images/paket-internet-marketing.webp')}
+                style={styles.boxBanner}>
+                <Text style={styles.textBanner}>Website</Text>
+              </ImageBackground>
+              <Text style={styles.descBanner}>Build Website React..</Text>
+            </View>
+
+            <View>
+              <ImageBackground
+                source={require('./src/images/paket-internet-marketing.webp')}
+                style={styles.boxBanner}>
+                <Text style={styles.textBanner}>Website</Text>
+              </ImageBackground>
+              <Text style={styles.descBanner}>Build Website React..</Text>
+            </View>
+
+            <View>
+              <ImageBackground
+                source={require('./src/images/paket-internet-marketing.webp')}
+                style={styles.boxBanner}>
+                <Text style={styles.textBanner}>Website</Text>
+              </ImageBackground>
+              <Text style={styles.descBanner}>Build Website React..</Text>
+            </View>
+          </ScrollView>
+        </View>
+
+        <View style={[styles.container, styles.shadow]}>
+          <TouchableHighlight
+            style={styles.btnTouch}
+            onPress={() => props.navigation.navigate('Shop')}>
+            <Text style={styles.textShop}>SHOP NOW</Text>
+          </TouchableHighlight>
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({
-  boxStyle: {
-    height: 100,
-    width: 50,
-    borderWidth: 1,
-    backgroundColor: 'orange',
-    marginBottom: 5
+const appNavigator = createStackNavigator({
+  Home: {
+    screen: App,
+    navigationOptions: stackOption,
+  },
+  Shop: {
+    screen: ScreenShop,
   },
 });
+export default createAppContainer(appNavigator);
