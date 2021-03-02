@@ -271,13 +271,10 @@ import {createStackNavigator} from 'react-navigation-stack';
 const stackOption = (props) => {
   return {
     headerStyle: {
-      backgroundColor: '#eee',
+      backgroundColor: '#001527',
     },
     headerTitle: () => (
-      <View>
-        <StatusBar animated backgroundColor="#eee" barStyle="dark-content" />
-        {/* <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true}/> */}
-
+      <View style={styles.wrapper}>
         <View style={styles.header}>
           <Text style={styles.textHeader}>byLearning</Text>
         </View>
@@ -289,6 +286,8 @@ const stackOption = (props) => {
 function App(props) {
   return (
     <View style={styles.wrapper}>
+      {/* <StatusBar animated backgroundColor="#eee" barStyle="dark-content" /> */}
+      <StatusBar animated barStyle="light-content" backgroundColor="transparent" translucent={true}/>
       <View>
         <ViewPager
           showPageIndicator={true}
@@ -361,7 +360,9 @@ function App(props) {
         <View style={[styles.container, styles.shadow]}>
           <TouchableHighlight
             style={styles.btnTouch}
-            onPress={() => props.navigation.navigate('Shop')}>
+            onPress={() => props.navigation.navigate('Shop')}
+            activeOpacity={0.6}
+            underlayColor='transparent'>
             <Text style={styles.textShop}>SHOP NOW</Text>
           </TouchableHighlight>
         </View>

@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     elevation: 4,
   },
   header: {
-    backgroundColor: '#eee',
+    backgroundColor: '#001527',
     height: 50,
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
   textHeader: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#fff',
   },
   textSection: {
     fontSize: 12,
